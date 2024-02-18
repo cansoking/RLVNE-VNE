@@ -85,6 +85,7 @@ def run_rl(sub_path, req_path, num_req, start, num_epoch=50, target='rc', test=F
         reward = []
         for event in timeline:
             req = event[1]
+            # 小于0为嵌入结束时间点event
             if event[0] < 0:
                 # 结束释放
                 if req.mapped == True:
